@@ -1,3 +1,4 @@
+import 'package:apb/pages/cart_pages.dart';
 import 'package:flutter/material.dart';
 
 class SilverAppBar extends StatelessWidget {
@@ -29,8 +30,16 @@ class SilverAppBar extends StatelessWidget {
       actions: [
         // cart button
         IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.shopping_cart),
+          onPressed: () {
+            // go to cart page
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CartPages(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.shopping_cart_outlined),
         )
       ],
       centerTitle: true,
