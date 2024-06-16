@@ -1,6 +1,5 @@
 import 'package:apb/component/cart_tile.dart';
 import 'package:apb/component/sign_in_button.dart';
-import 'package:apb/models/cart_item.dart';
 import 'package:apb/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
