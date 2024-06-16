@@ -6,6 +6,7 @@ import 'package:apb/component/tab_bar.dart';
 import 'package:apb/models/food.dart';
 import 'package:apb/models/restaurant.dart';
 import 'package:apb/pages/drawer.dart';
+import 'package:apb/pages/food_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +56,12 @@ class _HomePageState extends State<HomePage>
           //return food tile UI
           return FoodTile(
             food: food,
-            onTap: () {},
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => FoodPage(food: food),
+              ),
+            ),
           );
         },
       );
