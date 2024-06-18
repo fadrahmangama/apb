@@ -1,3 +1,4 @@
+import 'package:apb/services/auth/auth_services.dart';
 import 'package:flutter/material.dart';
 
 class DrawerTile extends StatelessWidget {
@@ -11,6 +12,11 @@ class DrawerTile extends StatelessWidget {
     required this.icon,
     required this.onTap,
   });
+
+  void logout() {
+	final authService = AuthService();
+	authService.signOut();
+}
 
   @override
   Widget build(BuildContext context) {

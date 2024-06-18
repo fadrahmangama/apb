@@ -1,6 +1,8 @@
 import 'package:apb/component/sign_in_button.dart';
+import 'package:apb/services/auth/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:apb/component/textfield.dart';
+
 
 import 'home_page.dart';
 
@@ -18,17 +20,27 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void login() {
-    /* fill ot authentication*/
+  // login method
+void login() async {
+  // get instance of auth service
+  final authService = AuthService(); 
 
-    //navigate to home page
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const HomePage(),
+  // try sign in
+  try {
+    await authService.signInWithEmailPassword(
+      emailController.text,
+      passwordController.text,
+    );
+  } catch (e) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(e.toString()),
       ),
     );
   }
+}
+
 
   @override
   Widget build(BuildContext context) {

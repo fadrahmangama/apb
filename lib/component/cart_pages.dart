@@ -1,10 +1,10 @@
+import 'package:apb/component/payment_page.dart';
+import 'package:apb/component/receipt.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:apb/component/cart_tile.dart';
 import 'package:apb/component/sign_in_button.dart';
 import 'package:apb/models/restaurant.dart';
-import 'package:apb/pages/payment_page.dart';
-import 'package:apb/pages/receipt.dart'; // Import the ReceiptPage
 
 class CartPages extends StatelessWidget {
   const CartPages({super.key});
