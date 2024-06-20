@@ -1,6 +1,7 @@
 import 'package:apb/component/cart_tile.dart';
 import 'package:apb/component/sign_in_button.dart';
 import 'package:apb/models/restaurant.dart';
+import 'package:apb/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -77,7 +78,12 @@ class CartPages extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 20),
                   child: SignInButton(
                     text: "Go to checkout",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => PaymentPage()),
+                      );
+                    },
                   ),
                 ),
             ],
